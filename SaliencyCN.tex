@@ -1,0 +1,133 @@
+%!TEX program=xelatex
+
+% 碰到Windows版本提示Fandol字体，可以在命令行中以管理员权限执行：tlmgr update -self -all
+%\documentclass[review]{cvpr}
+\documentclass[final]{cvpr}
+
+\usepackage[UTF8]{ctex}
+
+%\usepackage{cvpr}
+\usepackage{times}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{subfigure}
+\usepackage{overpic}
+
+\usepackage{enumitem}
+\setenumerate[1]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
+\setitemize[1]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
+\setdescription{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
+
+
+\usepackage[pagebackref=true,breaklinks=true,colorlinks,bookmarks=false]{hyperref}
+
+
+%\cvprfinalcopy % *** Uncomment this line for the final submission
+
+\def\cvprPaperID{159} % *** Enter the CVPR Paper ID here
+\def\confYear{CVPR 2020}
+\def\httilde{\mbox{\tt\raisebox{-.5ex}{\symbol{126}}}}
+
+\newcommand{\cmm}[1]{\textcolor[rgb]{0,0.6,0}{CMM: #1}}
+\newcommand{\todo}[1]{{\textcolor{red}{\bf [#1]}}}
+\newcommand{\alert}[1]{\textcolor[rgb]{.6,0,0}{#1}}
+
+\newcommand{\IT}{IT\cite{98pami/Itti}}
+\newcommand{\MZ}{MZ\cite{03ACMMM/Ma_Contrast-based}}
+\newcommand{\GB}{GB\cite{conf/nips/HarelKP06}}
+\newcommand{\SR}{SR\cite{07cvpr/hou_SpectralResidual}}
+\newcommand{\FT}{FT\cite{09cvpr/Achanta_FTSaliency}}
+\newcommand{\CA}{CA\cite{10cvpr/goferman_context}}
+\newcommand{\LC}{LC\cite{06acmmm/ZhaiS_spatiotemporal}}
+\newcommand{\AC}{AC\cite{08cvs/achanta_salient}}
+\newcommand{\HC}{HC-maps }
+\newcommand{\RC}{RC-maps }
+\newcommand{\Lab}{$L^*a^*b^*$}
+\newcommand{\mypara}[1]{\paragraph{#1.}}
+
+\graphicspath{{figures/}}
+
+% Pages are numbered in submission mode, and unnumbered in camera-ready
+%\ifcvprfinal\pagestyle{empty}\fi
+\setcounter{page}{1}
+
+\begin{document}
+% \begin{CJK*}{GBK}{song}
+
+\renewcommand{\figref}[1]{图\ref{#1}}
+\renewcommand{\tabref}[1]{表\ref{#1}}
+\renewcommand{\equref}[1]{式\ref{#1}}
+\renewcommand{\secref}[1]{第\ref{#1}节}
+\def\abstract{\centerline{\large\bf 摘要} \vspace*{12pt} \it}
+
+%%%%%%%%% TITLE
+
+\title{蒙太奇--试评《狮子王》中的电影音乐 \\ Montage is all you need: Film music from \textit{The Lion King}\thanks{狮子王（The Lion King）是一部 1994 年由华特迪士尼长篇动画制作、由华特迪士尼影片发行的动画史诗歌舞电影。}}
+
+\author{userElaina$^{1}$}
+
+\maketitle
+% \thispagestyle{empty}
+
+%%%%%%%%% ABSTRACT
+\begin{abstract}
+蒙太奇（Montage），又称蒙太奇序列（montage-séquence），是电影创作的主要叙述手段和表现手段之一。《狮子王》是一部 1994 年由华特迪士尼长篇动画制作、由华特迪士尼影片发行的动画史诗歌舞电影。本文对蒙太奇手法在《狮子王》中的应用进行了讨论。
+\end{abstract}
+
+
+%%%%%%%%% BODY TEXT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{引言}\label{sec:Introduction}
+
+蒙太奇~\cite{wiki0}，又称蒙太奇序列，原为建筑学的外来术语的音译，意为构成、装配，现多指一种电影剪辑技术，是电影创作的主要叙述手段和表现手段之一。蒙太奇异于长镜头电影表达方法，蒙太奇组合一系列不同地点、不同距离、不同角度、不同方法拍摄之多个短镜头，编辑成一部有情节之电影。凭借蒙太奇的作用，电影享有了时空上的极大自由，甚至可以构成与实际生活中的时间空间并不一致的电影时间和电影空间。蒙太奇可以产生演员动作和摄影机动作之外的“第三种动作”，从而影响影片的节奏和叙事方式。
+
+《狮子王》~\cite{wiki1}是一部1994年由华特迪士尼长篇动画制作、由华特迪士尼影片发行的动画史诗歌舞电影，为第32部迪士尼经典动画长片，也是迪士尼文艺复兴的第五部作品。该故事从威廉·莎士比亚的《哈姆雷特》取得灵感。
+
+本文对蒙太奇手法在《狮子王》中的应用进行讨论，关注蒙太奇式的创作概念，阐述蒙太奇如何帮助电影提升表达效果，讨论电影《狮子王》的主旨传递。
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{相关工作}
+\label{sec:RelatedWorks}
+
+本文主要关注以蒙太奇为代表的音画关系相关技术的《狮子王》相关的文献。
+
+1895年，埃德温·波特就借此创造了电影剪辑。戴维·沃克·格里菲思为电影艺术建立了完整体系。苏联的谢尔盖·爱森斯坦提出了蒙太奇理论，主张以一连串分割镜头的重组方式，来创造新的意义。蒙太奇的另一位重要理论家库里肖夫，为了弄清蒙太奇的并列效应，做了著名的镜头剪接实验，并发现了“库里肖夫效应”与“创造性地理”。从1930年代到50年代，蒙太奇镜头常常结合大量的短镜头和特殊的光学效果（褪色、溶解、分割画面、双曝光和三曝光）舞蹈和音乐~\cite{wiki0}。
+
+在2024年滕丹睿~\cite{a0}的工作中，讨论了蒙太奇在《人生大事》中的应用。
+
+《狮子王》由罗杰·艾勒斯和罗伯·明可夫执导，唐·哈恩监制，剧本由艾琳·美琪、乔纳森·罗伯特兹和琳达·沃尔夫顿创作，原创歌曲则由艾尔顿·约翰和作词家蒂姆·赖斯创作并由汉斯·季默配乐。《狮子王》的构思开始于1988年杰弗瑞·卡森伯格、洛伊·爱德华·迪士尼和彼得·施奈德于欧洲宣传《奥丽华历险记》时的一个会议。托马斯·M·迪斯科撰写了前期纲要，沃尔夫顿起草了第一份剧本，乔治·史克里布纳则被签约为导演，其后Roger亦一同加入执导。电影的制作于1991年开始，唯集中了大量迪士尼顶级动画家的《风中奇缘》亦在同一时期制作中。《狮子王》于1994年6月15日上映，并获得影评家的正面评价，称赞电影的音乐、故事及动画。电影在全球票房达10.84亿美元，并成为1994年全球总票房收入最高的电影、当时全球总票房收入第二高的电影以及现时全球总票房收入最高的传统动画电影。《狮子王》获得了两项与音乐相关的奥斯卡金像奖以及金球奖最佳音乐及喜剧电影。电影亦促成了许多衍生作品，包括百老汇改编音乐剧、衍生录像带首映电影、电视剧等。2016年，电影被美国国会图书馆因其“文化上、历史上或艺术上的重要性”被选入美国国家影片登记表保存。一部由乔恩·法夫罗执导的CGI重制于2019年7月19日于美国上映~\cite{wiki1}。
+
+在2012年曹广壮~\cite{a1}通过《狮子王》中的音乐，讨论了动画电影的音画关系。
+
+\section{《狮子王》剧情介绍}\label{sec:HC}
+
+《狮子王》故事设定于非洲的一个狮子王国，主角为一只名叫辛巴（Simba）的幼狮，它将从父亲木法沙（Mufasa）中继承荣耀石的王位。但在辛巴的叔叔刀疤（Scar）（木法沙嫉妒心极强的弟弟）谋杀木法沙后，辛巴被误导认为自己应对父亲的死负责并开始流亡。在和丁满（Timon）和彭彭（Pumbaa）的照顾下，辛巴逐渐成长，最后在儿时好友娜娜（Nala）和他的萨满拉飞奇（Rafiki）的启迪下，重回荣耀石来挑战刀疤以结束他的暴政，并重夺他在“生命的循环”中应有的王位。
+
+\section{蒙太奇的应用}\label{sec:HC}
+
+十九世纪的电影故事都很短，那时还都只有一个远景的单一镜次。因为故事的长度必须和镜头长度是一样的。到了20世纪，已经出现了连续性剪辑，将一些镜头浓缩起来，减去不必要的镜头，这是蒙太奇的雏形。发展到现在，电源蒙太奇的种类有很多，可划分为三种最基本的类型：叙事蒙太奇，表现蒙太奇和理想蒙太奇~\cite{zhihu0}。
+
+在《狮子王》中，蒙太奇的主要应用类型为叙事蒙太奇。大多为沿顺时针（时空）顺序的连续蒙太奇和平行蒙太奇。
+
+音乐可以自由地把不同空间，不同时间的画面连接起来，构成一个整体。在《狮子王》中这一作用就得到了充分的发挥，整部影片几乎达到了声画的同步进行。
+
+在辛巴误以为是自己害死父亲后流浪到另一片丛林后，被丁满和猪彭彭救助。他们生活、成长过程就是用 《Hakuna Matata》这首歌曲将画面组接起来的。
+
+在刀疤与鬣狗密谋推翻木法沙时，刀疤将自己的阴谋以歌曲的形式唱出，演出以刀疤为主，同时鬣狗群构成了不可或缺的背景，表现出了丰满的反派形象。
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{总结与展望}\label{sec:Conclusion}
+
+如今，蒙太奇手法已经广泛应用于电影音乐，并在大众中有所普及。在如 Youtube 和 Bilibili 等以用户创作为主导的视频网站中，不乏蒙太奇手法的应用。
+
+“如果导演是一个眼神，那么蒙太奇就是一次心跳。” 蒙太奇是电影的一种独特的语言方式。凭借蒙太奇的作用，电影拥有了时空上的自由，不同画面的组合可以创造出无穷的意义，从而带给观众无尽的想象空间。
+
+{\small
+\bibliographystyle{ieee}
+\bibliography{Saliency}
+}
+
+% \end{CJK*}
+\end{document}
